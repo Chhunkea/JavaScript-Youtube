@@ -1,10 +1,17 @@
 # Ignore node_modules
 node_modules/
 
-# Ignore build output
+# Build output directories
 dist/
+
+# Output.css
 output.css
 
-# Other potential ignores
+# MacOS specific files
 .DS_Store
+
+# Enviroment
 .env
+
+# logs
+*.log
