@@ -1,4 +1,10 @@
-*logs
-logs
+# Ignore node_modules
+node_modules/
 
+# Ignore build output
+dist/
+output.css
+
+# Other potential ignores
 .DS_Store
+.env
