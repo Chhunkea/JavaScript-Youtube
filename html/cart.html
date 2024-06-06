@@ -11,54 +11,82 @@
     <!-- Cart  -->
     <div>
         <div class="flex justify-center space-x-5 container min-h-screen">
-            <button class="mb-4" onclick="console.log(`Cart quanity: ${cartQuanity}`);">
-                show Quality
-            </button>
-        <br>
-            <!-- Plus +1 -->
-            <button class="mb-4" onclick="cartQuanity += 1;
-            console.log(`Cart quanity: ${cartQuanity}`);">Add to cart</button>
-        <br>
-            <!-- Plus +2 -->
-            <button class="mb-4" onclick="cartQuanity += 2 
-            console.log(`Cart quanity: ${cartQuanity}`);">+2</button>
-        <br>
-            <!-- Plus +3 -->
-            <button class="mb-4" onclick="cartQuanity += 3
-            console.log(`Cart quanity: ${cartQuanity}`)">+3</button>
-        <br>
-            <!-- Plus +4 -->
-            <button class="mb-4" onclick="cartQuanity += 4
-            console.log(`Cart quanity: ${cartQuanity}`)">+4</button>
-        <br>
-            <!-- Plus +5 -->
-            <button class="mb-4" onclick="cartQuanity += 5
-            console.log(`Cart quanity: ${cartQuanity}`)">+5</button>
-        <br>
-            <!-- Remove from cart -1 -->
-            <button class="mb-4" onclick="cartQuanity -= 1
-            console.log(`Cart quanity: ${cartQuanity}`)">-1</button>
-        <br>
-            <!-- Remove from cart -2 -->
-            <button class="mb-4" onclick="cartQuanity -= 2
-            console.log(`Cart quanity: ${cartQuanity}`)">-2</button>
-        <br>
-            <!-- Remove from cart -3 -->
-            <button class="mb-4" onclick="cartQuanity -= 3
-            console.log(`Cart quanity: ${cartQuanity}`)">-3</button>
-        <br>
-            <!-- Reset Cart -->
-            <button class="mb-4" onclick="cartQuanity = 0 
-            console.log('Cart was reset.')
-            console.log(`Cart quanity: ${cartQuanity}`)">Reset Cart</button>
-        <br>
+            <button class="mb-4" onclick="
+                console.log(`Cart quantity: ${cartQuantity}`);
+            ">Show Quantity</button>
+            <br>
 
+            <!-- Plus +1 -->
+            <button class="mb-4" onclick="
+                updateCartQuantity(1);
+            ">Add to Cart</button>
+            <br>
+
+            <!-- Plus +2 -->
+            <button class="mb-4" onclick="
+                updateCartQuantity(2);
+            ">+2</button>
+            <br>
+
+            <!-- Plus +3 -->
+            <button class="mb-4" onclick="
+                updateCartQuantity(3);
+            ">+3</button>
+            <br>
+
+            <!-- Plus +4 -->
+            <button class="mb-4" onclick="
+                updateCartQuantity(4);
+            ">+4</button>
+            <br>
+
+            <!-- Plus +5 -->
+            <button class="mb-4" onclick="
+                updateCartQuantity(5);
+            ">+5</button>
+            <br>
+
+            <!-- Remove from cart -1 -->
+            <button class="mb-4" onclick="
+                updateCartQuantity(-1);
+            ">Remove from cart</button>
+            <br>
+
+            <!-- Remove from cart -2 -->
+            <button class="mb-4" onclick="
+                updateCartQuantity(-2);
+            ">-2</button>
+            <br>
+
+            <!-- Remove from cart -3 -->
+            <button class="mb-4" onclick="
+                updateCartQuantity(-3);
+            ">-3</button>
+            <br>
+
+            <!-- Reset Cart -->
+            <button class="mb-4" onclick="
+                cartQuantity = 0;
+                console.log('Cart was reset.');
+                console.log(`Cart quantity: ${cartQuantity}`);
+            ">Reset Cart</button>
+            <br>
+        </div>
     </div>
     
     <!-- Script -->
     <script>
-        let cartQuanity = 0;
+        let cartQuantity = 0;
+        const updateCartQuantity = change => {
+            if (cartQuantity + change > 10) {
+                alert('The cart is full');
+            } else if (cartQuantity + change < 0) {
+                alert('Not enough items in the cart');
+            } else {
+                cartQuantity += change;
+                console.log(`Cart quantity: ${cartQuantity}`);
+            }
+        };
     </script>
-    </div>
 </body>
 </html>
